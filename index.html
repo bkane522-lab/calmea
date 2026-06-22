@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calméa - Respire. Écoute. Vis.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <meta name="theme-color" content="#0D0D1A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Calméa">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <span class="logo-icon">🌙</span>
+                <h1 class="logo-text">Calméa</h1>
+            </div>
+            <p class="tagline">Respire. Écoute. Vis.</p>
+        </header>
+
+        <div class="welcome-card">
+            <p id="greetingMessage">Bonsoir</p>
+            <p class="welcome-subtitle">Que souhaites-tu écouter ?</p>
+        </div>
+
+        <div class="categories">
+            <button class="cat-btn active" data-category="all">
+                <span class="cat-icon">✨</span><span>Tout</span>
+            </button>
+            <button class="cat-btn" data-category="sommeil">
+                <span class="cat-icon">🌙</span><span>Sommeil</span>
+            </button>
+            <button class="cat-btn" data-category="meditation">
+                <span class="cat-icon">🧘</span><span>Méditation</span>
+            </button>
+            <button class="cat-btn" data-category="focus">
+                <span class="cat-icon">🎯</span><span>Focus</span>
+            </button>
+            <button class="cat-btn" data-category="stress">
+                <span class="cat-icon">💆</span><span>Anti-stress</span>
+            </button>
+        </div>
+
+        <div class="tracks-container" id="tracksContainer"></div>
+
+        <div class="player" id="player">
+            <div class="player-progress">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <div class="player-main">
+                <div class="player-track-info">
+                    <span class="player-emoji" id="playerEmoji">🎵</span>
+                    <div>
+                        <span class="player-track-name" id="currentTrack">Choisis une piste</span>
+                        <span class="player-track-category" id="currentCategory"></span>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <button class="ctrl-btn" id="prevBtn"><span>⏮</span></button>
+                    <button class="ctrl-btn play-btn" id="playBtn"><span>▶️</span></button>
+                    <button class="ctrl-btn" id="nextBtn"><span>⏭</span></button>
+                </div>
+                <div class="player-extra">
+                    <div class="volume-control">
+                        <span class="volume-icon">🔈</span>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.7" class="volume-slider">
+                    </div>
+                    <span class="time-display" id="timerDisplay">00:00</span>
+                </div>
+            </div>
+            <div class="sleep-timer">
+                <button class="timer-btn" id="timerBtn">
+                    <span>⏱️</span><span id="timerLabel">Minuteur</span>
+                </button>
+                <div class="timer-options" id="timerOptions" style="display:none;">
+                    <button class="timer-option" data-minutes="0">Désactiver</button>
+                    <button class="timer-option" data-minutes="15">15 min</button>
+                    <button class="timer-option" data-minutes="30">30 min</button>
+                    <button class="timer-option" data-minutes="45">45 min</button>
+                    <button class="timer-option" data-minutes="60">60 min</button>
+                </div>
+                <span class="timer-active" id="timerActive" style="display:none;"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
